@@ -17,12 +17,10 @@ import { useState, useContext} from 'react';
 import { ShopContext } from './Context/ShopContext';
 
 function App() {
-  const {menubar} = useContext(ShopContext);
   return (
     <div>
       <BrowserRouter>
       <Navbar/>
-      {menubar? <MenuSetting/> : null}
       <Routes>
         <Route path='/' element={<Shop/>}/>
         <Route path='/mens' element={<ShopCategory banner={men_banner} category="men"/>}/>
