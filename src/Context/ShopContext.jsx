@@ -6,7 +6,6 @@ export const ShopContext =  createContext(null);
 
 
 const ShopContextProvider = (props) => {
-    let [menubar , setMenubar]=useState(false);
 
     const getDefaultCart = ()=>{
         let cart = {};
@@ -51,7 +50,7 @@ const ShopContextProvider = (props) => {
         return totalItem;
       }
 
-    const contextValue = {getTotalCartItems,removeFromCart,getTotalCartAmount,all_product,cartItems,addToCart, menubar, setMenubar};
+    const contextValue = {getTotalCartItems,removeFromCart,getTotalCartAmount,all_product,cartItems,addToCart};
     return (
         <ShopContext.Provider value={contextValue}>
             {props.children}
