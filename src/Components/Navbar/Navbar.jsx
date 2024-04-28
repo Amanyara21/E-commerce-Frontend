@@ -6,11 +6,11 @@ import nav_dropdown from '../Assets/nav_dropdown.png'
 import { Link } from 'react-router-dom'
 import { ShopContext } from '../../Context/ShopContext'
 import { useNavigate } from 'react-router-dom'
-
+import MenuSetting from '../MenuSetting/MenuSetting';
 const Navbar = () => {
 
     const [menu,setMenu] = useState("shop");
-    const {getTotalCartItems, menubar,setMenubar}= useContext(ShopContext);
+    const {getTotalCartItems}= useContext(ShopContext);
     const menuRef = useRef();
     const navigate= useNavigate();
 
@@ -21,6 +21,7 @@ const Navbar = () => {
 
   return (
     <div className='navbar'>
+    {localStorage.getItem("auth-token")? <MenuSetting/> : null}
       <Link to='/' onClick={()=>{setMenu("shop")}} className="nav-logo">
         <img src={logo} alt="" />
         <p>WingShop</p>
@@ -34,7 +35,7 @@ const Navbar = () => {
       </ul>
       <div className="nav-login-cart">
       {localStorage.getItem('auth-token')
-        ?<button onClick={()=>{localStorage.removeItem('auth-token'); navigate("/"); setMenubar(!menubar)}}>Logout</button>
+        ?<button onClick={()=>{localStorage.removeItem('auth-token'); navigate("/"); }}>Logout</button>
         :<Link to='/login' style={{ textDecoration: 'none' }}><button>Login</button></Link>}
         <Link to='/cart'><img src={cart_icon} alt="" /></Link>
         <div className="nav-cart-count">{getTotalCartItems()}</div>
