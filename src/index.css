@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'poppins';
+  background: linear-gradient(180deg, #4253af 0%,#0c6c7922 60%);;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
