@@ -6,7 +6,7 @@ const NewCollections = () => {
   return (
     const [new_collection,setNew_collection]= useState([])
   useEffect(()=>{
-    fetch("http://localhost:4000/newcollections")
+    fetch("https://e-commerce-backend-gray.vercel.app/newcollections")
     .then((response)=> response.json())
     .then((data)=>setNew_collection(data))
   },[])
