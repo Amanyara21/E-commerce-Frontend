@@ -3,13 +3,14 @@ import './NewCollections.css'
 import Item from '../Item/Item'
 
 const NewCollections = () => {
-  return (
-    const [new_collection,setNew_collection]= useState([])
+  const [new_collection,setNew_collection]= useState([])
   useEffect(()=>{
     fetch("https://e-commerce-backend-gray.vercel.app/newcollections")
     .then((response)=> response.json())
     .then((data)=>setNew_collection(data))
   },[])
+  return (
+
     <div className='new-collections'>
       <h1>NEW COLLECTIONS</h1>
       <div className="collections">
